@@ -32,6 +32,7 @@ deploy-job:
         SRC: deploy/files/path
         DEST: //remote-host/folder/path
     script:
+        - echo Deploy $SRC to $DEST
         ## See also https://linux.die.net/man/8/mount.cifs
         - mount.cifs -o "user=${USER},pass={$PASS}" $DEST /mnt/remote
         ## ミラーリング（チェックサムによる更新判定・削除反映）
